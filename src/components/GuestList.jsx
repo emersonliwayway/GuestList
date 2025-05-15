@@ -7,6 +7,7 @@ export default function GuestList({ setGuestId }) {
   return (
     <>
       <div className="guests">
+        <h3>Click on a guest for more information.</h3>
         <table>
           <thead>
             <tr>
