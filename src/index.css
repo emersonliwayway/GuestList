@@ -2,13 +2,39 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
+  margin: 20px;
+}
+
+.card {
+  list-style: none;
+  text-align: left;
+  border: solid, 1px, black;
+  padding: 10px;
+}
+
+.card > button {
+  margin-block-start: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+tr:hover {
+  cursor: pointer;
+  background-color: lemonchiffon;
+}
+
+thead {
+  border-bottom: solid 1px black;
 }
 
 table,
-td,
-th,
-tr {
-  border: solid, 1px, black;
+th {
   border-collapse: collapse;
-  padding: 10px;
+}
+
+tr {
+  border-bottom: 1px solid black;
 }

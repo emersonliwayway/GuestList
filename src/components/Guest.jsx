@@ -1,15 +1,27 @@
-import { useState } from "react";
-
+import useQuery from "./useQuery";
 export default function GuestCard({ guestId, setGuestId }) {
+  const { data: guest, error } = useQuery(`/guests/${guestId}`);
+  if (error || !guest) return <p>{error}</p>;
   return (
     <>
-      <div>
-        <li>{guestId.name}</li>
-        <li>{guestId.email}</li>
-        <li>{guestId.phone}</li>
-        <li>{guestId.bio}</li>
-        <li>{guestId.job}</li>
-        <button onClick={() => setGuestId(null)}>Return to Guests</button>
+      <div className="card">
+        <li>
+          <b>Name: </b>
+          {guest.name}
+        </li>
+        <li>
+          <b>Email: </b> {guest.email}
+        </li>
+        <li>
+          <b>Phone: </b> {guest.phone}
+        </li>
+        <li>
+          <b>Biography: </b> {guest.bio}
+        </li>
+        <li>
+          <b>Biography: </b> {guest.job}
+        </li>
+        <button onClick={() => setGuestId(null)}>Back</button>
       </div>
     </>
   );
